@@ -1,0 +1,17 @@
+
+%{
+	#include<stdio.h>
+%}
+
+%%
+">"|"<"|"<="|">="|"=="|"!="  {printf("\nRelational Operator\n");}
+
+.* {printf("dont know");}
+%%
+int main()
+{
+	printf("Enter i/p\n");
+	yylex();
+	return 0;
+}
+int yywrap(){return 1;}

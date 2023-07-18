@@ -1,0 +1,23 @@
+
+%{
+	#include<stdio.h>
+	int v=0;
+	int c=0;
+	int d=0;
+%}
+
+%%
+[0-5][0-9] {printf("true");}
+
+
+.* {printf("false");}
+
+%%
+int main()
+{
+	printf("\nEnter\n");
+	yylex();
+	printf("vowels=%d \n consts=%d \n digits=%d",v,c,d);
+	return 0;
+}
+int yywrap(){return 1;}

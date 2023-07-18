@@ -1,0 +1,19 @@
+
+%{
+	#include<stdio.h>
+	int const_count=0;
+	int vowel_count=0;
+%}
+
+%%
+[aeiouAEIOU] {vowel_count++;}
+[a-zA-Z] {const_count++;}
+%%
+int yywrap(){};
+int main()
+{
+	printf("\nEnter the string\n");
+	yylex();
+	printf("Vowel Count: %d \n Consonant Count: %d",vowel_count,const_count);
+	return 0;
+}
